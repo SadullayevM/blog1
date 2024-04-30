@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+        <h4>Salom {{ user.username }}. Saytga xush kelibsiz</h4>
+        <p><a href="{% url 'logout' %}">Logout</a></p>
+    {% else %}
+        <h4><a href="{% url 'login' %}">Log in</a></h4>
+    {% endif %}
+    <header>
+        <h2><a href="{% url 'home' %}">Home page</a></h2>
+        <h2><a href="{% url 'new_post' %}">News page</a></h2>
+    </header>
+</body>
+</html>

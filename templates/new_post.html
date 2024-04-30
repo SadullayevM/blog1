@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for post in object_list %}
+        <div class="news__entry-class">
+            <h2><a href="{% url 'new_detail' post.pk %}">{{post.title}}</a></h2>
+            <p>{{post.text | slice:":100"}}</p>
+        </div>
+    {% endfor %}
+
+    <h5><a href="{% url 'newp_create' %}">Create post</a></h5>
+{% endblock content %}
